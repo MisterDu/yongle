@@ -19,6 +19,7 @@ export default {
       uri: ['/home/recommend', '/home/venue']
     }
   },
+
   methods: {
     onClick (index) {
       //   console.log(index);

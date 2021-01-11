@@ -1,0 +1,191 @@
+.center-view{
+    padding-bottom: 0.5rem;
+     
+ }
+.header{
+     width: 100%;
+     position: relative;
+     z-index: 1;
+     height: 3.19rem;
+}
+.header .head-bg{
+     position: absolute;
+     width: 100%;
+     height: 70%;
+     overflow: hidden;
+     top: 0;
+     z-index: 1;
+     background: url(https://m2static.228.cn/images/head-poho-bg.jpg) no-repeat top;
+     background-size: 120%;
+}
+.header .head-icon{
+      padding-top: .29rem;
+      width: calc(100% - .3rem);
+      margin-left: .15rem;
+      overflow: hidden;
+      position: relative;
+      z-index: 9;
+}
+.header .head-icon .goback{
+      float: left;
+      background-image: url(../../assets/icon.png);
+      background-repeat: no-repeat;
+      background-position: 0 -34.54rem;
+      opacity: 0.3;
+}
+.header .head-icon a{
+      width: .3rem;
+      height: .31rem;
+      display: block;
+      background-size: 1.5rem;
+      border-radius: 50%;
+}
+.header .con{
+      position: relative;
+      z-index: 9;
+      height: 1.79rem;
+      margin-top: 0.8rem;
+}
+.header .con .top{
+      background: url(https://m2static.228.cn/images/person-titBg.png) no-repeat top;
+      background-size: 100%;
+}
+.header .con .top .head_photo{
+      padding-top: 0.1rem;
+      text-align: center;
+}
+.header .con .top .head_photo img{
+      height: .6rem;
+      width: .6rem;
+      border: 2px solid #fff;
+      border-radius: 50%;
+}
+.header .con .top .head_photo h4{
+      margin-top: 0.1rem;
+      font-size: 0.18rem;
+}
+.header .con .top .right{
+      position: absolute;
+      top: .33rem;
+      right: 0;
+      float: right;
+} 
+.header .con .top .right .serviceIcon{
+    background: url(//m2static.228.cn/img/31af021.png) no-repeat;
+    background-size: .25rem;
+    background-position: 0 0;
+}
+  .header .con .top .right a{
+    width: .2rem;
+    height: .2rem;
+    display: block;
+    float: left;
+    margin-right: .26rem;
+    
+}
+.header .con .top .right .setUpIcon{
+    background: url(//m2static.228.cn/img/31af021.png) no-repeat;
+    background-size: .25rem;
+    background-position: 0 -0.28rem;
+}
+.header .con .bot{
+    display: flex;
+    height: .4rem;
+    margin: .2rem .2rem .1rem;
+    font-size: .12rem;
+    text-align: center;
+}
+.header .con .bot span{
+      flex: 1;
+}
+.content{
+      display: block;
+}
+.content .orders_btn{
+    display: flex;
+    height: .98rem;
+    border-top: 1px solid #f3f4f5;
+    border-bottom: 1px solid #f3f4f5;
+    line-height: .98rem;
+}
+.content .orders_btn a{
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding-top: .24rem;
+    font-size: .13rem;
+}
+.content .orders_btn a i{
+    width: .23rem;
+    height: .24rem;
+    display: block;
+    position: absolute;
+    top: .3rem;
+    left: calc((100% - .21rem)/2);
+}
+.content .orders_btn .order_from i{
+    background: url(//m2static.228.cn/img/31af021.png) no-repeat;
+    background-size: .25rem;
+    background-position: 0 -.58rem;
+}
+.content .orders_btn .cash_card i{
+    background: url(//m2static.228.cn/img/31af021.png) no-repeat;
+    background-position: 0 -523px;
+    width: .3rem;
+    height: .24rem;
+    background-size: .3rem;
+    left: calc((100% - .3rem)/2);
+    top: .31rem;
+}
+.content .btn_list{
+      margin-top: .1rem;
+}
+.content .btn_list p{
+      height: .9rem;
+}
+.content .btn_list p a{
+    display: block;
+    float: left;
+    width: calc(33.33333% - 1px);
+    text-align: center;
+    line-height: .9rem;
+    height: .7rem;
+    position: relative;
+    padding-top: .2rem;
+    font-size: .13rem;
+    overflow: hidden;
+    color: #7b8187;
+}
+.content .btn_list p a i{
+    width: .23rem;
+    height: .22rem;
+    left: calc((100% - .22rem)/2);
+    top: .2rem;
+    position: absolute;
+    display: block;
+}
+.content .btn_list p .shopping_address i{
+    background: url(//m2static.228.cn/img/31af021.png) no-repeat;
+    background-size: .25rem;
+    background-position: 0 -5.39rem;
+}
+.content .btn_list p .my_collection i {
+    background: url(//m2static.228.cn/img/31af021.png) no-repeat;
+    background-size: .25rem;
+    background-position: 2px -2.96rem;
+}
+.content .btn_list p .shortage_registration i {
+    background: url(//m2static.228.cn/img/31af021.png) no-repeat;
+    background-size: .25rem;
+    background-position: 4px -2.62rem;
+}
+.content .btn_list p .my_question i {
+    background: url(//m2static.228.cn/img/31af021.png) no-repeat;
+    background-size: .25rem;
+    background-position: 2px -3.3rem;
+}
+.content .btn_list p .vouchers i {
+    background: url(//m2static.228.cn/img/31af021.png) no-repeat;
+    background-size: .25rem;
+    background-position: 0 -1.96rem;
+}

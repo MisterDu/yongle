@@ -14,7 +14,7 @@ import uri from '@/config/uri'
 export default {
   data () {
     return {
-      dataList: []
+      dataList: [],
     }
   },
   created () {

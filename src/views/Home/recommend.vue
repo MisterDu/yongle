@@ -28,6 +28,7 @@ export default {
       if (ret.result.status == 200) {
         this.dataList = ret.data.recommendPage.list
       } else {
+
       }
     })
   },

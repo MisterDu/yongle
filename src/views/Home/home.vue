@@ -12,35 +12,35 @@
     </van-swipe>
     <div class="grid">
       <div>
-        <img src="../../assets/yongle/儿童.png" alt />
+        <img src="../../assets/yongleIMG/儿童.png" alt />
         <p>儿童亲子</p>
       </div>
       <div>
-        <img src="../../assets/yongle/更多.png" alt />
+        <img src="../../assets/yongleIMG/更多.png" alt />
         <p>更多</p>
       </div>
       <div>
-        <img src="../../assets/yongle/话剧.png" alt />
+        <img src="../../assets/yongleIMG/话剧.png" alt />
         <p>话剧</p>
       </div>
       <div>
-        <img src="../../assets/yongle/活动.png" alt />
+        <img src="../../assets/yongleIMG/活动.png" alt />
         <p>活动</p>
       </div>
       <div>
-        <img src="../../assets/yongle/扇子.png" alt />
+        <img src="../../assets/yongleIMG/扇子.png" alt />
         <p>永乐说</p>
       </div>
       <div>
-        <img src="../../assets/yongle/体育赛事.png" alt />
+        <img src="../../assets/yongleIMG/体育赛事.png" alt />
         <p>体育赛事</p>
       </div>
       <div>
-        <img src="../../assets/yongle/演唱会.png" alt />
+        <img src="../../assets/yongleIMG/演唱会.png" alt />
         <p>演唱会</p>
       </div>
       <div>
-        <img src="../../assets/yongle/我的.png" alt />
+        <img src="../../assets/yongleIMG/我的.png" alt />
         <p>我的</p>
       </div>
     </div>

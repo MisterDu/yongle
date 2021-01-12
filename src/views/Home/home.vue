@@ -39,7 +39,6 @@ export default {
     Header
   },
   methods: {
-
   },
   created () {
 

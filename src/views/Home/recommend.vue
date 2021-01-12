@@ -27,9 +27,9 @@ export default {
       // console.log(ret.result.status);
       if (ret.result.status == 200) {
         this.dataList = ret.data.recommendPage.list
+      } else {
       }
     })
-
   },
   mounted () {
     // console.log(this.dataList.NAME);
@@ -54,11 +54,11 @@ export default {
 }
 
 .list li {
-  width: 33%;
+  width: 30%;
   height: 140px;
   display: block;
   float: left;
-  margin: 0 27px;
+  margin: 0 5px;
   margin-bottom: 80px;
 }
 

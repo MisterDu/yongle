@@ -53,11 +53,11 @@ export default {
 }
 
 .list li {
-  width: 33%;
+  width: 30%;
   height: 140px;
   display: block;
   float: left;
-  margin: 0 27px;
+  margin: 0 5px;
   margin-bottom: 60px;
 }
 

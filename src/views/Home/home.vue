@@ -15,7 +15,7 @@
         <img src="../../assets/yongleIMG/儿童.png" alt />
         <p>儿童亲子</p>
       </div>
-      <div>
+      <div @click="duo">
         <img src="../../assets/yongleIMG/更多.png" alt />
         <p>更多</p>
       </div>
@@ -39,7 +39,7 @@
         <img src="../../assets/yongleIMG/演唱会.png" alt />
         <p>演唱会</p>
       </div>
-      <div>
+      <div @click="center">
         <img src="../../assets/yongleIMG/我的.png" alt />
         <p>我的</p>
       </div>
@@ -73,6 +73,12 @@ export default {
     Header
   },
   methods: {
+    center () {
+      this.$router.push('/center')
+    },
+    duo () {
+      this.$router.push('/duo')
+    }
   },
   created () {
 

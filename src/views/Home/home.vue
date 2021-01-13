@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="box">
     <van-nav-bar title="永乐票务" left-text="返回" left-arrow>
       <template #right>
         <van-icon name="search" size="18" />
@@ -77,7 +77,7 @@ export default {
       this.$router.push('/center')
     },
     duo () {
-      this.$router.push('/duo')
+      this.$router.push('/category')
     }
   },
   created () {
@@ -119,9 +119,15 @@ export default {
 .grid p {
   line-height: 1px;
   font-size: 12px;
+  margin-top: 5px;
 }
 
 .grid img {
   width: 36px;
+}
+
+.box {
+  overflow: hidden;
+  margin-bottom: 55px;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="big">
     <ul class="list">
       <li v-for="(item, index) in dataList" :key="index" @click="godetail(item.PRODUCTID)">
         <img :src="'http://static.228.cn/' + item.IMG" />
@@ -51,6 +51,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.big {
+  margin-bottom: 100px;
+}
 .list {
   //   display: flex;
   width: 100%;
@@ -76,8 +79,8 @@ export default {
 .name {
   font-size: 14px;
   width: 105px;
-  height: 5px;
-  line-height: 1px;
+  height: 30px;
+  //   line-height: 1px;
   font-weight: 800;
 }
 

@@ -66,7 +66,7 @@ export default {
   display: block;
   float: left;
   margin: 0 5px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .list li img {
@@ -86,7 +86,7 @@ export default {
 .qian {
   font-size: 12px;
   color: #ff3a56;
-  line-height: 1px;
+  line-height: 19px;
   height: 12px;
 }
 

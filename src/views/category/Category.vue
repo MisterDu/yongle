@@ -179,8 +179,29 @@ export default {
 .card{
     margin-bottom: 70px;
 }
-.card div{
-    height: 100%;
+.card .van-card{
+    height: 130px;
+}
+.card .van-card .title{
+    height: .4rem;
+    font-size: .14rem;
+    line-height: .2rem;
+    overflow: hidden;
+    color: black;
+    font-weight: 600;
+}
+.card .van-card .desc{
+    color: #999ea3;
+    font-size: .13rem;
+    overflow: hidden;
+    margin-top: .1rem;
+}
+.card .van-card .desc div:nth-of-type(3){
+    margin-top: .13rem;
+    color: #ff3a56;
+    font-size: .14rem;
+    font-weight: 600;
+
 }
 .van-card__thumb img{
     width: 85px;

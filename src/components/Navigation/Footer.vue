@@ -7,21 +7,22 @@
             <van-tabbar-item ><van-icon class-prefix="iconfont icon-wode" slot="icon" size="0.2rem" /><span>我的</span></van-tabbar-item>
         </van-tabbar>
     </div>
+
 </template>
 <script>
 import '@/assets/font/iconfont.css'
 import Vue from 'vue';
-import { Tabbar, TabbarItem, Icon,} from 'vant';
+import { Tabbar, TabbarItem, Icon, } from 'vant';
 
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
 Vue.use(Icon);
 export default {
-  data() {
+  data () {
     return {
       active: 0,
       urls: ["/home/recommend", "/category", "/sousuo", "/center"]
-      
+
     }
   },
   computed:{
@@ -30,12 +31,12 @@ export default {
     }
   },
   created() {
-      this.active = this.urls.indexOf(this.$route.path)
+      this.active = this.urls.indexOf(this.$route.path) >= 0 ? this.urls.indexOf(this.$route.path) : 0
   },
   methods: {
-      changeItem(index) {
-          this.$router.push(this.urls[index])
-      }
+    changeItem (index) {
+      this.$router.push(this.urls[index])
+    }
   },
 };
 </script>

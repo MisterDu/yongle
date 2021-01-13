@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="list">
-      <li v-for="(item, index) in dataList" :key="index">
+      <li v-for="(item, index) in dataList" :key="index" @click="godetail(item.PRODUCTID)">
         <img :src="'http://static.228.cn/' + item.PBIGIMG" />
         <p class="name">{{item.NAME | parseName}}</p>
         <p class="qian">
@@ -21,6 +21,12 @@ export default {
       dataList: []
     }
   },
+  methods: {
+    godetail (id) {
+      console.log(id);
+      this.$router.push('/detail' + id)
+    }
+  },
   created () {
     this.$http.get(uri.home).then(ret => {
       console.log(ret.data.recommendPage.list);
@@ -34,6 +40,7 @@ export default {
   },
   mounted () {
     // console.log(this.dataList.NAME);
+
   },
   filters: {
     parseName (name) {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="list">
-      <li v-for="(item, index) in dataList" :key="index">
+      <li v-for="(item, index) in dataList" :key="index" @click="godetail(item.PRODUCTID)">
         <img :src="'http://static.228.cn/' + item.IMG" />
         <p class="name">{{item.VNAME | parseADDRESS}}</p>
         <p class="site">{{item.ADDRESS | parseVNAME}}</p>
@@ -15,6 +15,12 @@ export default {
   data () {
     return {
       dataList: [],
+    }
+  },
+  methods: {
+    godetail (id) {
+      console.log(id);
+      this.$router.push('/detail' + id)
     }
   },
   created () {

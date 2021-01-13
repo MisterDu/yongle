@@ -71,5 +71,11 @@ export default {
         this.$router.back()
     }
   },
+  created(){
+      this.$store.commit('global/setFooter',false)
+  },
+  beforeDestroy(){
+      this.$store.commit('global/setFooter',true)
+  }
 }
 </script>

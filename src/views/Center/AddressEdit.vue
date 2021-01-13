@@ -1,5 +1,10 @@
 <template>
     <div>
+      <div class="bodybg"></div>
+        <h3 class="head-tit">
+            <a href="javascript:;" class="goback" @click="goback"></a>
+            新增收货地址
+        </h3>
         <van-address-edit
         :area-list="areaList"
         show-delete
@@ -31,6 +36,7 @@ export default {
   created(){
       this.areaList = areaData
       this.address = JSON.parse(window.localStorage.getItem('address')) || []
+      this.$store.commit('global/setFooter',false)
   },
   methods: {
     onSave(content) {
@@ -55,5 +61,8 @@ export default {
       }
     },
   },
+  beforeDestroy(){
+      this.$store.commit('global/setFooter',true)
+  }
 }
 </script>

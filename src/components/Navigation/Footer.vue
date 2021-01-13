@@ -1,10 +1,10 @@
 <template>
     <div>
-        <van-tabbar @change="changeItem" v-model="active" active-color="#ff2959" inactive-color="#000">
-            <van-tabbar-item ><van-icon class-prefix="iconfont icon-shouye" slot="icon" size="1.6rem" /><span>首页</span></van-tabbar-item>
-            <van-tabbar-item ><van-icon class-prefix="iconfont icon-category" slot="icon" size="1.2rem" /><span>分类</span></van-tabbar-item>
-            <van-tabbar-item ><van-icon class-prefix="iconfont icon-sousuo" slot="icon" size="1.2rem" /><span>搜索</span></van-tabbar-item>
-            <van-tabbar-item ><van-icon class-prefix="iconfont icon-wode" slot="icon" size="1.2rem" /><span>我的</span></van-tabbar-item>
+        <van-tabbar @change="changeItem" v-model="active" active-color="#ff2959" inactive-color="#000" :key="key">
+            <van-tabbar-item ><van-icon class-prefix="iconfont icon-shouye" slot="icon" size="0.3rem" /><span>首页</span></van-tabbar-item>
+            <van-tabbar-item ><van-icon class-prefix="iconfont icon-category" slot="icon" size="0.2rem" /><span>分类</span></van-tabbar-item>
+            <van-tabbar-item ><van-icon class-prefix="iconfont icon-sousuo" slot="icon" size="0.2rem" /><span>搜索</span></van-tabbar-item>
+            <van-tabbar-item ><van-icon class-prefix="iconfont icon-wode" slot="icon" size="0.2rem" /><span>我的</span></van-tabbar-item>
         </van-tabbar>
     </div>
 </template>
@@ -22,6 +22,11 @@ export default {
       active: 0,
       urls: ["/home/recommend", "/category", "/sousuo", "/center"]
       
+    }
+  },
+  computed:{
+    key(){
+      return this.active = this.urls.indexOf(this.$route.path)
     }
   },
   created() {

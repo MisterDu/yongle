@@ -77,7 +77,7 @@ export default {
       this.$router.push('/center')
     },
     duo () {
-      this.$router.push('/duo')
+      this.$router.push('/category')
     }
   },
   created () {

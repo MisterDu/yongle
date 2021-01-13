@@ -9,7 +9,7 @@
                 <div class="top">
                     <div class="head_photo">
                         <img src="https://m2static.228.cn/images/head-photo.png" alt="" v-if="!userInfo.headIcon">
-                        <img :src="userInfo.headIcon" alt="" v-if="userInfo.headIcon">
+                        <img :src="userInfo.headIcon"  v-if="userInfo.headIcon">
                         <h4 v-if="userInfo.userId">{{userInfo.mobile}}</h4>
                         <h4 v-if="!userInfo.userId" @click="gotoLogin">请登录</h4>
                     </div>
@@ -106,6 +106,7 @@ export default {
             .get('http://127.0.0.1:2004/backend/get_user_info')
             .then(ret => {this.userInfo = ret.data})
         }
+
     },
 }
 </script>

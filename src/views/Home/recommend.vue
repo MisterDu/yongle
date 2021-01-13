@@ -29,7 +29,6 @@ export default {
   },
   created () {
     this.$http.get(uri.home).then(ret => {
-      console.log(ret.data.recommendPage.list);
       // console.log(ret.result.status);
       if (ret.result.status == 200) {
         this.dataList = ret.data.recommendPage.list

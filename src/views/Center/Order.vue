@@ -15,6 +15,11 @@
 import '@/assets/css/reset.css'
 import '@/assets/css/order.css'
 export default {
-   
+   created(){
+      this.$store.commit('global/setFooter',false)
+  },
+  beforeDestroy(){
+      this.$store.commit('global/setFooter',true)
+  }
 }
 </script>

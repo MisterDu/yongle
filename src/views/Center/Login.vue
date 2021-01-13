@@ -4,7 +4,7 @@
         <div class="product">
             <div class="head">
                 <div class="head_icon">
-                    <a class="goback"></a>
+                    <a href="javascript:;" class="goback" @click="goback"></a>
                 </div>
             </div>
         </div>
@@ -67,6 +67,15 @@ export default {
             }
         });
     },
+    goback(){
+        this.$router.back()
+    }
   },
+  created(){
+      this.$store.commit('global/setFooter',false)
+  },
+  beforeDestroy(){
+      this.$store.commit('global/setFooter',true)
+  }
 }
 </script>

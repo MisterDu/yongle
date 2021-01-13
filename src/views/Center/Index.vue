@@ -3,13 +3,13 @@
         <div class="header">
             <div class="head-bg"></div>
             <div class="head-icon">
-                <a href="javascript;" class="goback"></a>
+                <a href="javascript:;" class="goback" @click="this.goback"></a>
             </div>
             <div class="con">
                 <div class="top">
                     <div class="head_photo">
                         <img src="https://m2static.228.cn/images/head-photo.png" alt="" v-if="!userInfo.headIcon">
-                        <img :src="userInfo.headIcon" alt="" v-if="userInfo.headIcon">
+                        <img :src="userInfo.headIcon"  v-if="userInfo.headIcon">
                         <h4 v-if="userInfo.userId">{{userInfo.mobile}}</h4>
                         <h4 v-if="!userInfo.userId" @click="gotoLogin">请登录</h4>
                     </div>
@@ -44,7 +44,7 @@
         </div>
         <div class="content">
             <div class="orders_btn">
-                <a href="#" class="order_from">
+                <a href="javascript:;" class="order_from" @click="goto('order')">
                     <i></i>
                     我的订单
                 </a>
@@ -55,7 +55,7 @@
             </div>
             <div class="btn_list">
                 <p>
-                    <a href="#" class="shopping_address">
+                    <a href="#" class="shopping_address" @click="goto('address')">
                         <i></i>
                         收货地址
                     </a>
@@ -94,7 +94,10 @@ export default {
     methods:{
         gotoLogin(){
             this.$router.push('/login')
-        }
+        },
+        goto(url){
+            this.$router.push(url)
+        },
     },
     created(){
         let jwt = this.$store.state.global._token
@@ -103,6 +106,7 @@ export default {
             .get('http://127.0.0.1:2004/backend/get_user_info')
             .then(ret => {this.userInfo = ret.data})
         }
-    }
+
+    },
 }
 </script>

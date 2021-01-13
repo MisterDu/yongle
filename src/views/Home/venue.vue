@@ -19,14 +19,12 @@ export default {
   },
   methods: {
     godetail (id) {
-      console.log(id);
       this.$router.push('/detail/' + id)
     }
   },
   created () {
     this.$http.get(uri.venue).then(ret => {
-      console.log(ret.data.venuePage.list);
-      console.log(ret.result.status);
+      
       if (ret.result.status == 200) {
         this.dataList = ret.data.venuePage.list
       }

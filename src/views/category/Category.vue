@@ -13,12 +13,12 @@
             </template>
         </van-nav-bar>
         <van-dropdown-menu active-color="#FF2959" >
-            <van-dropdown-item v-model="value1" :options="option1" />
+            <van-dropdown-item v-model="value1" :options="option1" @change="getCitiesList" />
             <van-dropdown-item v-model="value2" :options="option2" />
             <van-dropdown-item v-model="value3" :options="option3" />
         </van-dropdown-menu>
         <div class="card">
-            <van-card tag="标签" v-for="item in list" :key="item.productid">
+            <van-card tag="售票中" v-for="item in list" :key="item.productid" @click="getId(item.productid)">
             <template #thumb>
                 <img :src="'https://static.228.cn/' + item.pbigimg" width="66">
             </template>
@@ -42,7 +42,7 @@
                </div>
                 </template>
         </van-card>
-        <van-button class="v-button" round type="info" size="small" color="#ff2959"  plain @click="loading">加载更多</van-button>
+        <van-button class="v-button" v-show="isShow" ref="but" round type="info" size="small" color="#ff2959"  plain @click="loading">加载更多</van-button>
         </div>
         
     </div>
@@ -65,6 +65,7 @@ export default {
             value1: 0,
             value2: 'a',
             value3: 'A',
+            isShow: true,
             option1: [
                 { text: '全国', value: 0 },
                 { text: '北京', value: 1, py:'bj' },
@@ -113,14 +114,28 @@ export default {
         loading(){
             this.getMore()
         },
+        getCitiesList(value){
+            console.log(this.option1[value].py);
+            if(!this.option1[value].py){
+                this.list = []
+                this.pageNum = 1
+                this.getDate()
+                this.isShow = true
+            }else{
+                this.isShow = false
+                let city = this.option1[value].py
+                this.getSearch(city)
+            }
+        },
+        getId(PRODUCTID){
+            this.$router.push("/detail/" + PRODUCTID)
+        },
         getDate(){
             this.$http.get(uri.getAll).then(ret => {
-                console.log(ret.data);
                 if(ret.result.status == 200) {
                     if(this.pageNum <= Math.ceil(ret.data.pagerMemory.total / 10)){
                         this.list = [...ret.data.pagerMemoryList,...this.list]
                         this.pageNum++
-                        console.log(123);
                     }else{
                         Toast.fail('网络繁忙!')
                     }
@@ -128,17 +143,31 @@ export default {
             })
         },
         getMore(){
-            let params = {'params':"pagenum=2"}
+            let params = {'params':"pagenum=" + this.pageNum}
             this.$http.post(uri.getMore,Qs.stringify(params)
                 
             ).then(ret => {
-                console.log(ret.data);
                 if(ret.result.status == 200) {
+                    if(this.pageNum <= ret.data.pages){
                         this.list = [...this.list,...ret.data.pagerMemoryList]
                         this.pageNum++
-                        console.log(123);
+                    }
+
+                    if(this.pageNum > ret.data.pages){
+                        console.log(this.$refs.but.innerText='没有更多了');
+                    }
+                        
                 }
                 })
+        },
+        getSearch(city){
+            this.$http.get(uri.getSearch + city + ".json").then(ret => {
+                console.log(ret);
+                if(ret.result.status == 200) {
+                        this.list = [...ret.data.pagerMemoryList]
+                }
+            })
+            
         },
     },
     created(){

@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       active: 0,
-      urls: ["/home", "/category", "/sousuo", "/center"]
+      urls: ["/home/recommend", "/category", "/sousuo", "/center"]
       
     }
   },

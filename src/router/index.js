@@ -1,23 +1,40 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+
+import centerRouter from '@/router/routes/center.js'
+
+
 
 Vue.use(VueRouter)
+import categoryRouter from './routes/category'
+import detailRouter from './routes/detail'
+import NOtFount from '@/views/Not/Notfount'
+import Home from './routes/home'
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+
+
+    {
+        path: '/',
+        redirect: '/home/recommend'
+    },
+    Home,
+
+    categoryRouter,
+    detailRouter,
+
+    
+    {
+        path: '*',
+        component: NOtFount
+    },
+
+
+  ...centerRouter
+
+    
+
+
 ]
 
 const router = new VueRouter({
@@ -25,5 +42,20 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+import store from '@/store/index.js'
+router.beforeEach((to, from, next) => {
+  // console.log(to, from)
+  let quanxian = ['/address', '/addressedit','/order']
+  let _token = store.state.global._token
+  if (_token) {
+    next()
+  } else {
+    if (quanxian.includes(to.path)) {
+      router.push('/login')
+    } else {
+      next()
+    }
+  }
+  
+})
 export default router

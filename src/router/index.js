@@ -1,11 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import centerRouter from '@/router/routes/center.js'
 
+
+
 Vue.use(VueRouter)
+import categoryRouter from './routes/category'
 
 const routes = [
   ...centerRouter,
+    categoryRouter
 ]
 
 const router = new VueRouter({
